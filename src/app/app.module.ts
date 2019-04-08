@@ -1,18 +1,34 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+
+import { AppRoutingModule } from './app-routing/app-routing.module';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './core/header/header.component';
 import { NavbarComponent } from './core/navbar/navbar.component';
+import { WineListComponent } from './wine/wine-list/wine-list.component';
+import { PaginationComponent } from './wine/pagination/pagination.component';
+import { TableComponent } from './wine/table/table.component';
+import { WineFormComponent } from './wine/wine-form/wine-form.component';
+import { AboutComponent } from './wine/about/about.component';
+import { SearchComponent } from './wine/search/search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    NavbarComponent
+    NavbarComponent,
+    WineListComponent,
+    PaginationComponent,
+    TableComponent,
+    WineFormComponent,
+    AboutComponent,
+    SearchComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
