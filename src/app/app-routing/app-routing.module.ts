@@ -10,7 +10,7 @@ export const route : Routes = [
 	{path:'wine', component: TableComponent},
 	{path:'wine/add', component: WineFormComponent},
 	{path:'wine/:id', component: WineFormComponent},
-	{path:'wine/about', component: AboutComponent},
+	{path:'about', component: AboutComponent},
 	{path:'', redirectTo:'/wine', pathMatch:'full'}
 ];
 
