@@ -1,3 +1,9 @@
-<p>
-  pagination works!
-</p>
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    <li class="page-item" (click)="selectedPage(activePage - 1)"><a class="page-link">Previous</a></li>
+
+    <li class="page-item" *ngFor="let i of pagList" (click)="selectedPage(i)" [ngClass]="{'text-success':true, 'active': i == activePage}"><a class="page-link">{{i}}</a></li>
+
+    <li class="page-item" (click)="selectedPage(activePage+1)"><a class="page-link">Next</a></li>
+  </ul>
+</nav>

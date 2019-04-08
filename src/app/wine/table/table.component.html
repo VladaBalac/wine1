@@ -16,7 +16,7 @@
 			<td>{{i.grapes}}</td>
 			<td>{{i.country}}</td>
 			<td>{{i.region}}</td>
-			<button class="btn btn-warning">Edit</button>
+			<button class="btn btn-warning" [routerLink]="['/wine/', i._id]">Edit</button>
 			<button class="btn btn-danger" (click)="remove(i._id)">Delete</button>
 		</tr>
 	</tbody>
