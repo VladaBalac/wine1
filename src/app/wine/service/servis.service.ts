@@ -13,7 +13,7 @@ const url = "http://localhost:3000/api/wines";
 })
 export class ServisService {
 
-  constructor(private http :HttpClient, private params :HttpParams) { }
+  constructor(private http :HttpClient) { }
 
   getAll():Observable<WineServeBack> {
 		return this.http.get(url).pipe(map(res => new WineServeBack(res)))

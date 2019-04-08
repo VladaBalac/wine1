@@ -1,3 +1,23 @@
-<p>
-  table works!
-</p>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Year</th>
+			<th>Grapes</th>
+			<th>Country</th>
+			<th>Region</th>
+
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let i of wine">
+			<td>{{i.name}}</td>
+			<td>{{i.year}}</td>
+			<td>{{i.grapes}}</td>
+			<td>{{i.country}}</td>
+			<td>{{i.region}}</td>
+			<button class="btn btn-warning">Edit</button>
+			<button class="btn btn-danger" (click)="remove(i._id)">Delete</button>
+		</tr>
+	</tbody>
+</table>

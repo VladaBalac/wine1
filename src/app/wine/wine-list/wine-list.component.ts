@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
+
+import { ServisService } from '../service/servis.service';
+
+import { Wine } from '../model/wine';
+import { WineServeBack } from '../model/wineServeBack';
 
 @Component({
   selector: 'app-wine-list',
@@ -7,9 +12,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WineListComponent implements OnInit {
 
-  constructor() { }
+	private wineList :Wine[];
+	private count :number;
+
+  constructor(private servis:ServisService) { }
 
   ngOnInit() {
+  	this.refresh();
+  }
+
+  refresh(){
+  	this.servis.getAll().subscribe(res => {
+  		this.wineList = res.wines;
+  		this.count = res.count;
+  	})
   }
 
 }
