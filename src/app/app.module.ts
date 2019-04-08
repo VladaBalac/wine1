@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing/app-routing.module';
+import { ServisService } from './wine/service/servis.service';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './core/header/header.component';
@@ -30,7 +31,7 @@ import { SearchComponent } from './wine/search/search.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ServisService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
