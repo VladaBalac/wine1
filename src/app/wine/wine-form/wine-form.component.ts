@@ -39,6 +39,22 @@ export class WineFormComponent implements OnInit {
   		this.formaUnosVina.patchValue(this.wine);
   		}
   	)}
+  }
+
+  onSubmit(){
+  	let submitWine :Wine = new Wine(this.formaUnosVina.value);
+  	if(this.wine && this.wine._id){
+  		submitWine._id = this.wine._id
+  		this.servic.updateWine(submitWine).subscribe(res => {
+  			this.formaUnosVina.reset();
+  			this.r.navigate(['/wine']);
+  		});
+  	}else{
+  		this.servic.addWine(submitWine).subscribe(res=> {
+  			this.formaUnosVina.reset();
+  			this.r.navigate(['/wine']);
+  		})
+  	}
   	
 
   }

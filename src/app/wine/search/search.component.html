@@ -1,3 +1,7 @@
-<p>
-  search works!
-</p>
+<form class="form-inline" [formGroup]="searchForm" (submit)="sendSearch()">
+
+	<input type="text" class="form-control col-sm-4" id="inlineFormInput" placeholder="Search by name" formControlName="tekstPretrage">
+
+	<button type="submit" class="btn btn-primary">Search</button>
+
+</form>

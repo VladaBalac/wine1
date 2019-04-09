@@ -43,4 +43,9 @@ export class WineListComponent implements OnInit {
   	this.refresh();
   }
 
+  searchByName(name){
+  	this.params.filter.name = name;
+  	this.refresh();
+  }
+
 }
