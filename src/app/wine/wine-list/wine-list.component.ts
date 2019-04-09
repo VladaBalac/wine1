@@ -15,6 +15,16 @@ export class WineListComponent implements OnInit {
 	private wineList :Wine[];
 	private count :number;
 
+	private params = {
+		sort: "",
+		sortDirection: "",
+		page: 1,
+		pageSize: 4,
+		filter: {
+			name: ""
+		}
+	}
+
   constructor(private servis:ServisService) { }
 
   ngOnInit() {
@@ -22,10 +32,15 @@ export class WineListComponent implements OnInit {
   }
 
   refresh(){
-  	this.servis.getAll().subscribe(res => {
+  	this.servis.getAll(this.params).subscribe(res => {
   		this.wineList = res.wines;
   		this.count = res.count;
   	})
+  }
+
+  changePage(page){
+  	this.params.page = page;
+  	this.refresh();
   }
 
 }

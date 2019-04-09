@@ -15,8 +15,19 @@ export class ServisService {
 
   constructor(private http :HttpClient) { }
 
-  getAll():Observable<WineServeBack> {
-		return this.http.get(url).pipe(map(res => new WineServeBack(res)))
+  getAll(params?: any):Observable<WineServeBack> {
+  	let queryParams = {};
+  	if(params){
+  		queryParams = {
+  			params : new HttpParams()
+  				.set("sort", params.sort || "")
+  				.set("sortDirection", params.sortDirection || "")
+  				.set("page", params.page && params.page.toString() || "")
+  				.set("pageSize", params.page && params.pageSize.toString() || "")
+  				.set("filter", params.filter && JSON.stringify(params.filter) || "")
+  		}
+  	}
+		return this.http.get(url, queryParams).pipe(map(res => new WineServeBack(res)))
 	}
 
 	getWine(id: number):Observable<Wine>{

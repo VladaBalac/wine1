@@ -10,6 +10,6 @@
 </div>
 <div class="row">
 	<div class="col">
-		<app-pagination [noWine]="count" [showPage]="3"></app-pagination>
+		<app-pagination [noWine]="count" [showPage]="params.pageSize" (givePage)="changePage($event)"></app-pagination>
 	</div>
 </div>

@@ -42,4 +42,4 @@ export class PaginationComponent implements OnInit, OnChanges {
 
 
 
-}
+

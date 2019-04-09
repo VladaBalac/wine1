@@ -1,3 +1,62 @@
-<p>
-  wine-form works!
-</p>
+
+<form [formGroup]="formaUnosVina" (submit)="onSubmit()">
+  <div class="form-group row">
+    <label for="name" class="col-2 col-form-label">Name</label>
+    <div class="col-10">
+    	<input type="text" class="form-control" id="name" placeholder="name" formControlName="name">
+    <!-- 	<small>Notification about name </small> -->
+    	<small class="text-danger" *ngIf="formaUnosVina.controls.name.touched && formaUnosVina.controls.name.errors?.required">Name is required</small>
+
+    	<small class="text-danger" *ngIf="formaUnosVina.controls.name.touched && formaUnosVina.controls.name.errors?.minlength">Name shoud be at least two charaters long</small>
+   			
+  	</div>
+  </div>
+
+  <div class="form-group row">
+    <label for="year" class="col-2 col-form-label">Year</label>
+    <div class="col-10">
+    	<input type="text" class="form-control" id="year" placeholder="year" formControlName="year">
+   			<!-- <small>Notification about year </small> -->
+   			<small class="text-danger" *ngIf="formaUnosVina.controls.year.touched && formaUnosVina.controls.year.errors?.required">Year is required</small>
+  	</div>
+  </div>
+
+  <div class="form-group row">
+    <label for="grapes" class="col-2 col-form-label">Grapes</label>
+    <div class="col-10">
+    	<input type="text" class="form-control" id="grapes" placeholder="grapes" formControlName="grapes">
+   			<!-- <small>Notification about grapes </small> -->
+   			<small class="text-danger" *ngIf="formaUnosVina.controls.grapes.touched && formaUnosVina.controls.grapes.errors?.required">Grapes is required</small>
+  	</div>
+  </div>
+
+  <div class="form-group row">
+    <label for="country" class="col-2 col-form-label">Country</label>
+    <div class="col-10">
+    	<input type="text" class="form-control" id="country" placeholder="country" formControlName="country">
+   			<!-- <small>Notification about country </small> -->
+   			<small class="text-danger" *ngIf="formaUnosVina.controls.country.touched && formaUnosVina.controls.country.errors?.required">Country is required</small>
+  	</div>
+  </div>
+
+  <div class="form-group row">
+    <label for="region" class="col-2 col-form-label">Region</label>
+    <div class="col-10">
+    	<input type="text" class="form-control" id="region" placeholder="region" formControlName="region">
+   			<!-- <small>Notification about region </small> -->
+   			<small class="text-danger" *ngIf="formaUnosVina.controls.region.touched && formaUnosVina.controls.region.errors?.required">Region is required</small>
+  	</div>
+  </div>
+
+  <div class="form-group row">
+    <label for="description" class="col-2 col-form-label">Description</label>
+    <div class="col-10">
+    	<input type="text" class="form-control" id="description" placeholder="description" formControlName="description">
+   			<!-- <small>Notification about description </small> -->
+   			<small class="text-danger" *ngIf="formaUnosVina.controls.description.touched && formaUnosVina.controls.description.errors?.required">Description is required</small>
+  	</div>
+  </div>
+
+
+  <button type="submit" class="btn btn-primary" [disabled]="formaUnosVina.invalid">Submit</button>
+</form>
